@@ -18,7 +18,7 @@ let config = {
     COLORFUL: true,
     COLOR_UPDATE_SPEED: 10,
     PAUSED: false,
-    BACK_COLOR: { r: 0, g: 0, b: 0 },
+    BACK_COLOR: { r: 0, g: 0, b: 0, a: 0 },
     TRANSPARENT: true,
     BLOOM: true,
     BLOOM_ITERATIONS: 10,
@@ -1268,7 +1268,7 @@ function render (target) {
 
 function drawTransparentColor(target) {
     // Set a transparent color
-    var transparentColor = { r: 0, g: 0, b: 0, a: 0.5 }; // Adjust this to your desired transparent color
+    var transparentColor = { r: 0, g: 0, b: 0, a: 0 }; // Adjust this to your desired transparent color
     
     // Draw the transparent color
     drawColor(target, transparentColor);
