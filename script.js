@@ -58,7 +58,7 @@ if (isMobile()) {
     config.DYE_RESOLUTION = 1024;
 }
 if (!ext.supportLinearFiltering) {
-    config.DYE_RESOLUTION = 512;
+    config.DYE_RESOLUTION = 1024;
     config.SHADING = true
     config.BLOOM = true
     config.SUNRAYS = true
