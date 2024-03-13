@@ -1268,7 +1268,7 @@ function render (target) {
 
 function drawTransparentColor(target) {
     // Set a transparent color
-    var transparentColor = { r: 0, g: 0, b: 0, a: 0 }; // Adjust this to your desired transparent color
+    var transparentColor = { r: 0, g: 0, b: 0, a: 0.5 }; // Adjust this to your desired transparent color
     
     // Draw the transparent color
     drawColor(target, transparentColor);
