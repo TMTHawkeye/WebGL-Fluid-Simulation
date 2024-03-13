@@ -1262,9 +1262,18 @@ function render (target) {
     if (!config.TRANSPARENT)
         drawColor(target, normalizeColor(config.BACK_COLOR));
     if (target == null && config.TRANSPARENT)
-        drawCheckerboard(target);
+        drawTransparentColor(target);
     drawDisplay(target);
 }
+
+function drawTransparentColor(target) {
+    // Set a transparent color
+    var transparentColor = { r: 0, g: 0, b: 0, a: 0 }; // Adjust this to your desired transparent color
+    
+    // Draw the transparent color
+    drawColor(target, transparentColor);
+}
+
 
 function drawColor (target, color) {
     colorProgram.bind();
