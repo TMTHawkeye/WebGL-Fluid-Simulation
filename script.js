@@ -60,7 +60,10 @@ if (!ext.supportLinearFiltering) {
     config.SUNRAYS = true;
 }
 
-startGUI();
+if (!isMobile()) {
+    startGUI();
+}
+
 
 function getWebGLContext (canvas) {
     const params = { alpha: true, depth: false, stencil: false, antialias: false, preserveDrawingBuffer: false };
