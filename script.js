@@ -1,7 +1,3 @@
-
-
-
-
 // Simulation section
 
 const canvas = document.getElementsByTagName('canvas')[0];
@@ -11,7 +7,7 @@ let config = {
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1024,
     CAPTURE_RESOLUTION: 512,
-    DENSITY_DISSIPATION: 1.6,
+    DENSITY_DISSIPATION: 1.7,
     VELOCITY_DISSIPATION: 0.2,
     PRESSURE: 0.8,
     PRESSURE_ITERATIONS: 20,
