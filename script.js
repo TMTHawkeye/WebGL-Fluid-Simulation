@@ -60,9 +60,9 @@ if (!ext.supportLinearFiltering) {
     config.SUNRAYS = true;
 }
 
-if (!isMobile()) {
-    startGUI();
-}
+
+startGUI();
+
 
 
 function getWebGLContext (canvas) {
