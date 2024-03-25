@@ -5,7 +5,7 @@ resizeCanvas();
 
 let config = {
     SIM_RESOLUTION: 128,
-    DYE_RESOLUTION: 512,
+    DYE_RESOLUTION: 128,
     CAPTURE_RESOLUTION: 512,
     DENSITY_DISSIPATION: 2.0,
     VELOCITY_DISSIPATION: 0.2,
@@ -15,14 +15,14 @@ let config = {
     SPLAT_RADIUS: 0.25,
     SPLAT_FORCE: 6000,
     SHADING: true,
-    COLORFUL: true,
+    COLORFUL: false,
     COLOR_UPDATE_SPEED: 10,
     PAUSED: false,
     BACK_COLOR: { r: 0, g: 0, b: 0},
     TRANSPARENT: true,
     BLOOM: true,
-    BLOOM_ITERATIONS: 10,
-    BLOOM_RESOLUTION: 256,
+    BLOOM_ITERATIONS: 50,
+    BLOOM_RESOLUTION: 512,
     BLOOM_INTENSITY: 2,
     BLOOM_THRESHOLD: 1,
     BLOOM_SOFT_KNEE: 0.7,
@@ -1154,15 +1154,17 @@ function resizeCanvas () {
 }
 
 function updateColors (dt) {
-    if (!config.COLORFUL) return;
-
+   if (!config.COLORFUL) {
+   return;
+    }
     colorUpdateTimer += dt * config.COLOR_UPDATE_SPEED;
     if (colorUpdateTimer >= 1) {
         colorUpdateTimer = wrap(colorUpdateTimer, 0, 1);
         pointers.forEach(p => {
             p.color = generateColor();
         });
-    }
+    
+   }
 }
 
 function applyInputs () {
@@ -1525,6 +1527,28 @@ function generateColor () {
     c.r *= 0.15;
     c.g *= 0.15;
     c.b *= 0.15;
+    return c;
+}
+
+function generateRedColor () {
+    let c = HSVtoRGB(Math.random(), 1.0, 1.0);
+    c.r *= 1;
+    c.g *= 0;
+    c.b *= 0;
+    return c;
+}
+function generateBlueColor () {
+    let c = HSVtoRGB(Math.random(), 1.0, 1.0);
+    c.r *= 0;
+    c.g *= 0;
+    c.b *= 1;
+    return c;
+}
+function generateGreenColor () {
+    let c = HSVtoRGB(Math.random(), 1.0, 1.0);
+    c.r *= 0;
+    c.g *= 1;
+    c.b *= 0;
     return c;
 }
 
